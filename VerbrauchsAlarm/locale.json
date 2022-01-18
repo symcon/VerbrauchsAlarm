@@ -4,7 +4,7 @@
             "Metervalue which should be used": "Zählerwert welcher ausgelesen werden soll.",
             "Metervariable": "Zählervariable",
             "Small user timer interval": "Kleinverbrauch Zeitintervall",
-            "Bulk user timer interval": "Großverbrauch Zeitintervall",
+            "Large user timer interval": "Großverbrauch Zeitintervall",
             "Minutes": "Minuten",
             "No activity": "Keine Aktivität",
             "Everything fine": "Alles im grünen Bereich",

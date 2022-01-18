@@ -44,9 +44,9 @@ class VerbrauchsAlarm extends IPSModule
             IPS_SetVariableProfileValues('VBA.ThresholdValue', 0, 250, 0.5);
         }
 
-        $this->RegisterVariableInteger('SmallUser', $this->Translate('Small User'), 'VBA.UseLevel');
+        $this->RegisterVariableInteger('SmallUser', $this->Translate('Small user'), 'VBA.UseLevel');
 
-        $this->RegisterVariableBoolean('LargeUser', $this->Translate('Large User'), '~Alert');
+        $this->RegisterVariableBoolean('LargeUser', $this->Translate('Large user'), '~Alert');
 
         $this->RegisterVariableBoolean('Alert', $this->Translate('Alert'), '~Alert');
     }
@@ -83,6 +83,7 @@ class VerbrauchsAlarm extends IPSModule
 
     public function CheckAlert(string $ThresholdName, string $BufferName)
     {
+        var_dump($ThresholdName);
         $MeterValue = GetValue($this->ReadPropertyInteger('MeterID'));
         $ValueOld = json_decode($this->GetBuffer($BufferName));
 
@@ -110,7 +111,7 @@ class VerbrauchsAlarm extends IPSModule
                 SetValue($this->GetIDForIdent('LargeUser'), false);
                 $this->SetBuffer($BufferName, json_encode($MeterValue));
             }
-            //reset the Alarm
+            //reset the Alert
             if (GetValue($this->GetIDForIdent('SmallUser')) < $this->ReadPropertyInteger('AlertThresholder') || !GetValue($this->GetIDForIdent('LargeUser'))) {
                 SetValueBoolean($this->GetIDForIdent('Alert'), false);
             }

@@ -30,7 +30,7 @@
 		{
 			"type": "NumberSpinner",
 			"name": "LargeUserInterval",
-			"caption": "Large timer interval",
+			"caption": "Large user timer interval",
 			"suffix": "Minutes"
 		},
 		{
