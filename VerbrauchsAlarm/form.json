@@ -38,7 +38,5 @@
 			"name": "LargeUserThreshold",
 			"caption": "Large user threshold"
 		}
-	],
-	"actions": [],
-	"status": []
+	]
 }
