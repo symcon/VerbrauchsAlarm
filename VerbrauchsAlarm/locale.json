@@ -1,0 +1,26 @@
+{
+    "translations": {
+        "de": {
+            "Metervalue which should be used": "Zählerwert welcher ausgelesen werden soll.",
+            "Metervariable": "Zählervariable",
+            "Small user timer interval": "Kleinverbrauch Zeitintervall",
+            "Bulk user timer interval": "Großverbrauch Zeitintervall",
+            "Minutes": "Minuten",
+            "No activity": "Keine Aktivität",
+            "Everything fine": "Alles im grünen Bereich",
+            "Normal activity": "Normale Aktivität",
+            "High activity": "Erhöhte Aktivität",
+            "Abnormal activity": "Unnormale Aktivität",
+            "Pre-Alarm": "Vor-Alarm",
+            "Alarm triggered": "Alarm ausgelöst",
+            "Small user": "Kleinverbrauch",
+            "Small user threshold": "Kleinverbrauch Grenzwert",
+            "Large user": "Großverbrauch",
+            "Large user threshold": "Großverbrauch Grenzwert",
+            "Invalid Ident": "Unzulässiger Ident",
+            "Alert": "Alarmbenachichtigung",
+            "Alert threshold": "Alarmauslöser",
+            "Timer interval": "Zeitintervall"
+        }
+    }
+}

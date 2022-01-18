@@ -1,0 +1,44 @@
+{
+	"elements": [
+		{
+			"type": "Label",
+			"caption": "Metervalue which should be used"
+		},
+		{
+			"type": "SelectVariable",
+			"name": "MeterID",
+			"caption": "Metervariable"
+		},
+		{
+			"type": "NumberSpinner",
+			"caption": "Alert threshold",
+			"name": "AlertThresholder",
+			"minimum": 0,
+			"maximum": 6
+		},
+		{
+			"type": "NumberSpinner",
+			"name": "SmallUserInterval",
+			"caption": "Small user timer interval",
+			"suffix": "Minutes"
+		},
+		{
+			"type": "NumberSpinner",
+			"name": "SmallUserThreshold",
+			"caption": "Small user threshold"
+		},
+		{
+			"type": "NumberSpinner",
+			"name": "LargeUserInterval",
+			"caption": "Large timer interval",
+			"suffix": "Minutes"
+		},
+		{
+			"type": "NumberSpinner",
+			"name": "LargeUserThreshold",
+			"caption": "Large user threshold"
+		}
+	],
+	"actions": [],
+	"status": []
+}

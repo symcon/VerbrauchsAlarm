@@ -1,0 +1,12 @@
+{
+    "id": "{DCEBC798-B5D9-A6B8-795F-E673F67329F5}",
+    "name": "VerbrauchsAlarm",
+    "author": "Symcon GmbH",
+    "url": "https://www.symcon.de/",
+    "compatibility": {
+        "version": "6.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}

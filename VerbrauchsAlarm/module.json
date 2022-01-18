@@ -1,0 +1,12 @@
+{
+    "id": "{55C90903-3A4F-3837-B2ED-A36CA0536C51}",
+    "name": "VerbrauchsAlarm",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VBA",
+    "url": "https://github.com/symcon/VerbrauchsAlarm"
+}

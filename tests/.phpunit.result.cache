@@ -1,0 +1,1 @@
+{"version":1,"defects":{"VerbrauchsAlarmValidationTest::testValidateVerbrauchsAlarmModule":4},"times":{"VerbrauchsAlarmValidationTest::testValidateVerbrauchsAlarm":0.001,"VerbrauchsAlarmValidationTest::testValidateVerbrauchsAlarmModule":0.013,"VerbrauchsAlarmValidationTest::testNop":0}}
