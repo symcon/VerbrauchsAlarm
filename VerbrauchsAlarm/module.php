@@ -83,7 +83,6 @@ class VerbrauchsAlarm extends IPSModule
 
     public function CheckAlert(string $ThresholdName, string $BufferName)
     {
-        var_dump($ThresholdName);
         $MeterValue = GetValue($this->ReadPropertyInteger('MeterID'));
         $ValueOld = json_decode($this->GetBuffer($BufferName));
 
@@ -107,7 +106,7 @@ class VerbrauchsAlarm extends IPSModule
             if ($ThresholdName == 'SmallUserThreshold') {
                 SetValue($this->GetIDForIdent('SmallUser'), 0);
                 $this->SetBuffer($BufferName, json_encode($MeterValue));
-            } elseif (GetValueFloat($this->GetIDForIdent($ThresholdName)) != 0) {
+            } elseif ($this->ReadPropertyFloat($ThresholdName) != 0) {
                 SetValue($this->GetIDForIdent('LargeUser'), false);
                 $this->SetBuffer($BufferName, json_encode($MeterValue));
             }
