@@ -1,75 +1,75 @@
 {
-	"elements": [
-		{
-			"type": "SelectVariable",
-			"name": "MeterID",
-			"caption": "Metervariable",
-			"onChange": "VBA_UpdateSuffix($id,$MeterID);"
-		},
-		{
-			"type": "Label",
-			"caption": " "
-		},
-		{
-			"type": "NumberSpinner",
-			"name": "SmallUserInterval",
-			"caption": "Small user timer interval",
-			"suffix": "Minutes"
-		},
-		{
-			"type": "NumberSpinner",
-			"name": "SmallUserThreshold",
-			"caption": "Small user threshold"
-		},
-		{
-			"type": "Select",
-			"caption": "Alert threshold",
-			"name": "AlertThresholder",
-			"options": [
-				{
-					"caption": "No activity",
-					"value": 0
-				},
-				{
-					"caption": "Everything fine",
-					"value": 1
-				},
-				{
-					"caption": "Normal activity",
-					"value": 2
-				},
-				{
-					"caption": "High activity",
-					"value": 3
-				},
-				{
-					"caption": "Abnormal activity",
-					"value": 4
-				},
-				{
-					"caption": "Pre-Alarm",
-					"value": 5
-				},
-				{
-					"caption": "Alarm",
-					"value": 6
-				}
-			]
-		},
-		{
-			"type": "Label",
-			"caption": " "
-		},
-		{
-			"type": "NumberSpinner",
-			"name": "LargeUserInterval",
-			"caption": "Large user timer interval",
-			"suffix": "Minutes"
-		},
-		{
-			"type": "NumberSpinner",
-			"name": "LargeUserThreshold",
-			"caption": "Large user threshold"
-		}
-	]
+    "elements": [
+        {
+            "type": "SelectVariable",
+            "name": "MeterID",
+            "caption": "Metervariable",
+            "onChange": "VBA_UpdateSuffix($id,$MeterID);"
+        },
+        {
+            "type": "Label",
+            "caption": " "
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "SmallUserInterval",
+            "caption": "Small user timer interval",
+            "suffix": "Minutes"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "SmallUserThreshold",
+            "caption": "Small user threshold"
+        },
+        {
+            "type": "Select",
+            "caption": "Alert threshold",
+            "name": "AlertThresholder",
+            "options": [
+                {
+                    "caption": "No activity",
+                    "value": 0
+                },
+                {
+                    "caption": "Everything fine",
+                    "value": 1
+                },
+                {
+                    "caption": "Normal activity",
+                    "value": 2
+                },
+                {
+                    "caption": "High activity",
+                    "value": 3
+                },
+                {
+                    "caption": "Abnormal activity",
+                    "value": 4
+                },
+                {
+                    "caption": "Pre-Alarm",
+                    "value": 5
+                },
+                {
+                    "caption": "Alarm",
+                    "value": 6
+                }
+            ]
+        },
+        {
+            "type": "Label",
+            "caption": " "
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "LargeUserInterval",
+            "caption": "Large user timer interval",
+            "suffix": "Minutes"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "LargeUserThreshold",
+            "caption": "Large user threshold"
+        }
+    ]
 }
