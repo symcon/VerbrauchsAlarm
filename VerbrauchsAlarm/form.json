@@ -1,20 +1,14 @@
 {
 	"elements": [
 		{
-			"type": "Label",
-			"caption": "Metervalue which should be used"
-		},
-		{
 			"type": "SelectVariable",
 			"name": "MeterID",
-			"caption": "Metervariable"
+			"caption": "Metervariable",
+			"onChange": "VBA_UpdateSuffix($id,$MeterID);"
 		},
 		{
-			"type": "NumberSpinner",
-			"caption": "Alert threshold",
-			"name": "AlertThresholder",
-			"minimum": 0,
-			"maximum": 6
+			"type": "Label",
+			"caption": " "
 		},
 		{
 			"type": "NumberSpinner",
@@ -26,6 +20,45 @@
 			"type": "NumberSpinner",
 			"name": "SmallUserThreshold",
 			"caption": "Small user threshold"
+		},
+		{
+			"type": "Select",
+			"caption": "Alert threshold",
+			"name": "AlertThresholder",
+			"options": [
+				{
+					"caption": "No activity",
+					"value": 0
+				},
+				{
+					"caption": "Everything fine",
+					"value": 1
+				},
+				{
+					"caption": "Normal activity",
+					"value": 2
+				},
+				{
+					"caption": "High activity",
+					"value": 3
+				},
+				{
+					"caption": "Abnormal activity",
+					"value": 4
+				},
+				{
+					"caption": "Pre-Alarm",
+					"value": 5
+				},
+				{
+					"caption": "Alarm",
+					"value": 6
+				}
+			]
+		},
+		{
+			"type": "Label",
+			"caption": " "
 		},
 		{
 			"type": "NumberSpinner",

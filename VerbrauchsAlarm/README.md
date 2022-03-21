@@ -44,11 +44,11 @@ __Konfigurationsseite__:
 Name                     | Beschreibung
 ------------------------ | ---------------------------------
 Zählervariable           | Variable, welche den Zählerwert wiedergibt.
-Alarmsauslöser           | __Standard: 6__ Wert, wann der Alarm für den Kleinverbrauch geschaltet werden soll.
+Alarmsauslöser           | __Standard: 6__ Kleinverbrauchsstufe bei dem der Alarm ausgelöst wird.
 Kleinverbrauch Intervall | __Standard: 1min__ Zeitintervall in dem kontrolliert wird, ob der Verbrauch zu hoch ist ist.
-Kleinverbrauch Grenzwert | __Standart: 150__ Grenzwert bei dem der Zustand geändert wird.
-Großverbrauch Intervall  | __Standard: 15min__ Zeitintervall in dem kontrolliert wird, ob der Verbrauch zu hoch ist.
-Großverbrauch Grenzwert  | __Standart: 0__ Grenzwert bei dem der Zustand geändert wird.
+Kleinverbrauch Grenzwert | __Standart: 0__ Grenzwert bei dem der Zustand geändert wird. Ist dieser nicht gesetzt wird nicht darauf geprüft.
+Großverbrauch Intervall  | __Standard: 5min__ Zeitintervall in dem kontrolliert wird, ob der Verbrauch zu hoch ist.
+Großverbrauch Grenzwert  | __Standart: 0__ Grenzwert bei dem der Zustand geändert wird.Ist dieser nicht gesetzt wird nicht darauf geprüft.
 
 ### 5. Statusvariablen und Profile
 
@@ -69,6 +69,17 @@ Bezeichnung        | Beschreibung
 VBA.LeakLevel      | Profil für Kleinverbrauch - 7 Alarmstufen mit verschiedenen Symbolen und Farbanzeigen
 VBA.ThresholdValue | Profil für Klein-/Großverbrauch Grenzwert
 
+Aufschlüsselung VBA.LeakLevel
+Stufe                   | Wert 
+----------------------- | ----------
+Keine Aktivität         | 0
+Alles im grünen Bereich | 1
+Normale Aktivität       | 2
+Erhöte Aktivität        | 3
+Unnormale Aktivität     | 4
+Vor-Alarm               | 5 
+Alarm                   | 6 
+
 ### 6. WebFront
 
 Über das WebFront können die Grenzwerte eingestellt werden.  
@@ -80,3 +91,8 @@ Es wird zusätzlich angezeigt, ob ein Alarm vorliegt oder nicht.
 Kontrolliert innerhalb des VerbraucherAlarms mit der InstanzID $InstanzID ob ein Grenzwert überschritten wurde und setzt die Alarmvariablen  
 Die Funktion liefert keinerlei Rückgabewert.  
 `VBA_CheckAlert(12345, "SmallUserThreashold", "SmallUserBuffer");`
+
+`void VBA_UpdateSuffix(int $meterID);`
+Führt ein UpdateFormfield() für den Suffix und Anzahl der Nachkommastellen der Grenzwerte aus. 
+Die Funktion liefert keinerlei Rückgabewert
+`VBA_UpdateSuffix(12345);`

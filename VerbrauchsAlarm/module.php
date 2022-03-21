@@ -16,7 +16,7 @@ class VerbrauchsAlarm extends IPSModule
         $this->RegisterPropertyInteger('LargeUserInterval', 5);
         $this->RegisterPropertyInteger('AlertThresholder', 6);
         $this->RegisterPropertyFloat('LargeUserThreshold', 0.0);
-        $this->RegisterPropertyFloat('SmallUserThreshold', 150);
+        $this->RegisterPropertyFloat('SmallUserThreshold', 0);
 
         //Timer
         $this->RegisterTimer('UpdateSmallUser', 0, 'VBA_CheckAlert($_IPS[\'TARGET\'], "SmallUserThreshold", "SmallUserBuffer");');
@@ -81,6 +81,72 @@ class VerbrauchsAlarm extends IPSModule
         }
     }
 
+    public function RequestAction($Ident, $Value)
+    {
+        switch ($Ident) {
+            case 'SmallUserThreshold':
+            case 'LargeUserThreshold':
+                //Neuen Wert in die Statusvariable schreiben
+                SetValue($this->GetIDForIdent($Ident), $Value);
+                break;
+
+            default:
+                throw new Exception($this->Translate('Invalid Ident'));
+        }
+    }
+
+    public function GetConfigurationForm()
+    {
+        $data = json_decode(file_get_contents(__DIR__ . '/form.json'));
+        //Options for AlertThresholder
+        $var = IPS_GetVariable($this->GetIDForIdent('SmallUser'));
+        if ($var['VariableCustomProfile'] != '') {
+            $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
+        } else {
+            $profile = IPS_GetVariableProfile($var['VariableProfile']);
+        }
+        $assosiations = $profile['Associations'];
+        for ($i = 0; $i < count($assosiations); $i++) {
+            $option[] = ['caption' => $assosiations[$i]['Name'], 'value' => $assosiations[$i]['Value']];
+        }
+        $data->elements[4]->options = $option;
+
+        //Suffix for the thresholds
+        $var = IPS_GetVariable($this->ReadPropertyInteger('MeterID'));
+        if ($var['VariableCustomProfile'] != '') {
+            $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
+        } else {
+            $profile = IPS_GetVariableProfile($var['VariableProfile']);
+        }
+        //Small Threasholder
+        $data->elements[3]->suffix = $profile['Suffix'];
+        $data->elements[3]->digits = $profile['Digits'];
+        //Large Thresholder
+        $data->elements[7]->suffix = $profile['Suffix'];
+        $data->elements[7]->digits = $profile['Digits'];
+
+        return json_encode($data);
+    }
+
+    public function UpdateSuffix(int $meterID)
+    {
+        //Get suffix and digits
+        $var = IPS_GetVariable($meterID);
+        if ($var['VariableCustomProfile'] != '') {
+            $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
+        } else {
+            $profile = IPS_GetVariableProfile($var['VariableProfile']);
+        }
+        $suffix = $profile['Suffix'];
+        $digits = $profile['Digits'];
+
+        //UpdateFormfield
+        $this->UpdateFormField('SmallUserThreshold', 'suffix', $suffix);
+        $this->UpdateFormField('LargeUserThreshold', 'suffix', $suffix);
+        $this->UpdateFormField('SmallUserThreshold', 'digits', $digits);
+        $this->UpdateFormField('LargeUserThreshold', 'digits', $digits);
+    }
+
     public function CheckAlert(string $ThresholdName, string $BufferName)
     {
         $MeterValue = GetValue($this->ReadPropertyInteger('MeterID'));
@@ -114,20 +180,6 @@ class VerbrauchsAlarm extends IPSModule
             if (GetValue($this->GetIDForIdent('SmallUser')) < $this->ReadPropertyInteger('AlertThresholder') || !GetValue($this->GetIDForIdent('LargeUser'))) {
                 SetValueBoolean($this->GetIDForIdent('Alert'), false);
             }
-        }
-    }
-
-    public function RequestAction($Ident, $Value)
-    {
-        switch ($Ident) {
-            case 'SmallUserThreshold':
-            case 'LargeUserThreshold':
-                //Neuen Wert in die Statusvariable schreiben
-                SetValue($this->GetIDForIdent($Ident), $Value);
-                break;
-
-            default:
-                throw new Exception($this->Translate('Invalid Ident'));
         }
     }
 }
