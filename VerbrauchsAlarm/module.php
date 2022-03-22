@@ -112,6 +112,7 @@ class VerbrauchsAlarm extends IPSModule
         $data->elements[4]->options = $option;
 
         //Suffix for the thresholds
+        if($this->ReadPropertyInteger('MeterID') != 0){
         $var = IPS_GetVariable($this->ReadPropertyInteger('MeterID'));
         if ($var['VariableCustomProfile'] != '') {
             $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
@@ -124,6 +125,7 @@ class VerbrauchsAlarm extends IPSModule
         //Large Thresholder
         $data->elements[7]->suffix = $profile['Suffix'];
         $data->elements[7]->digits = $profile['Digits'];
+    }
 
         return json_encode($data);
     }
