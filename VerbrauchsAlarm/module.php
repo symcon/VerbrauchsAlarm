@@ -112,20 +112,20 @@ class VerbrauchsAlarm extends IPSModule
         $data->elements[4]->options = $option;
 
         //Suffix for the thresholds
-        if($this->ReadPropertyInteger('MeterID') != 0){
-        $var = IPS_GetVariable($this->ReadPropertyInteger('MeterID'));
-        if ($var['VariableCustomProfile'] != '') {
-            $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
-        } else {
-            $profile = IPS_GetVariableProfile($var['VariableProfile']);
+        if ($this->ReadPropertyInteger('MeterID') != 0) {
+            $var = IPS_GetVariable($this->ReadPropertyInteger('MeterID'));
+            if ($var['VariableCustomProfile'] != '') {
+                $profile = IPS_GetVariableProfile($var['VariableCustomProfile']);
+            } else {
+                $profile = IPS_GetVariableProfile($var['VariableProfile']);
+            }
+            //Small Threasholder
+            $data->elements[3]->suffix = $profile['Suffix'];
+            $data->elements[3]->digits = $profile['Digits'];
+            //Large Thresholder
+            $data->elements[7]->suffix = $profile['Suffix'];
+            $data->elements[7]->digits = $profile['Digits'];
         }
-        //Small Threasholder
-        $data->elements[3]->suffix = $profile['Suffix'];
-        $data->elements[3]->digits = $profile['Digits'];
-        //Large Thresholder
-        $data->elements[7]->suffix = $profile['Suffix'];
-        $data->elements[7]->digits = $profile['Digits'];
-    }
 
         return json_encode($data);
     }
