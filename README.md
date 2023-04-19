@@ -6,5 +6,5 @@
 
 Folgende Module beinhaltet das VerbrauchsAlarm Repository:
 
-- __VerbrauchsAlarm__ ([Dokumentation](VerbrauchsAlarm))  
+- __VerbrauchsAlarm__ ([Dokumentation](https://www.symcon.de/de/service/dokumentation/modulreferenz/verbrauchsalarm))  
 	Überwacht eine Zähler-Variable auf unnatürlichen Verbrauch. 
