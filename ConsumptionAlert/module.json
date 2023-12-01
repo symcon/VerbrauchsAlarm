@@ -1,6 +1,6 @@
 {
     "id": "{55C90903-3A4F-3837-B2ED-A36CA0536C51}",
-    "name": "VerbrauchsAlarm",
+    "name": "ConsumptionAlert",
     "type": 3,
     "vendor": "",
     "aliases": [],
@@ -8,5 +8,5 @@
     "childRequirements": [],
     "implemented": [],
     "prefix": "VBA",
-    "url": "https://github.com/symcon/VerbrauchsAlarm"
+    "url": "https://www.symcon.de/en/service/documentation/module-reference/verbrauchsalarm/"
 }

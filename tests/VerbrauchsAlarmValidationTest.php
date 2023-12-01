@@ -8,8 +8,8 @@ class VerbrauchsAlarmValidationTest extends TestCaseSymconValidation
     {
         $this->validateLibrary(__DIR__ . '/..');
     }
-    public function testValidateVerbrauchsAlarmModule(): void
+    public function testValidateConsumptionAlertModule(): void
     {
-        $this->validateModule(__DIR__ . '/../VerbrauchsAlarm');
+        $this->validateModule(__DIR__ . '/../ConsumptionAlert');
     }
 }
