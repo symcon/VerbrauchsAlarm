@@ -20,7 +20,9 @@
             "Invalid Ident": "Unzulässiger Ident",
             "Alert": "Alarm",
             "Alert threshold": "Alarmauslöser",
-            "Timer interval": "Zeitintervall"
+            "Timer interval": "Zeitintervall",
+            "https://www.symcon.de/en/service/documentation/module-reference/verbrauchsalarm/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/verbrauchsalarm/",
+            "ConsumptionAlert": "VerbrauchsAlarm"
         }
     }
 }

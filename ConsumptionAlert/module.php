@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class VerbrauchsAlarm extends IPSModule
+class ConsumptionAlert extends IPSModule
 {
     public function Create()
     {
