@@ -21,7 +21,7 @@
             "Alert": "Alarm",
             "Alert threshold": "Alarmauslöser",
             "Timer interval": "Zeitintervall",
-            "https://www.symcon.de/en/service/documentation/module-reference/verbrauchsalarm/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/verbrauchsalarm/",
+            "https://www.symcon.de/en/service/documentation/module-reference/consumption-alert/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/verbrauchsalarm/",
             "ConsumptionAlert": "VerbrauchsAlarm"
         }
     }
